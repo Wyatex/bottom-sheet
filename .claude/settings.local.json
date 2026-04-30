@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(git init:*)",
+      "Bash(git branch:*)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm build:*)",
+      "Bash(pnpm test:*)",
+      "Bash(pnpm lint:*)",
+      "Bash(pnpm lint:fix)",
+      "Bash(xxd \"D:/project/npm/bottom-sheet/docs/guide/getting-started.md\")",
+      "Bash(pnpm build:docs)"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "bottom-sheet-root",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@10.12.1",
+  "scripts": {
+    "dev": "pnpm --filter @wyatex/bottom-sheet-playground dev",
+    "build": "pnpm --filter @wyatex/bottom-sheet build",
+    "build:docs": "pnpm --filter @wyatex/bottom-sheet-docs build",
+    "dev:docs": "pnpm --filter @wyatex/bottom-sheet-docs dev",
+    "preview:docs": "pnpm --filter @wyatex/bottom-sheet-docs preview",
+    "test": "vitest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "changeset": "changeset",
+    "release": "pnpm build && changeset publish"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.13.2",
+    "@changesets/cli": "^2.29.4",
+    "@vue/test-utils": "^2.4.6",
+    "eslint": "^9.27.0",
+    "happy-dom": "^17.4.6",
+    "typescript": "^5.8.3",
+    "vitepress": "^1.6.3",
+    "vitest": "^3.1.4",
+    "vue": "^3.5.14"
+  }
+}
