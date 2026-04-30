@@ -10,7 +10,8 @@
       "Bash(pnpm lint:*)",
       "Bash(pnpm lint:fix)",
       "Bash(xxd \"D:/project/npm/bottom-sheet/docs/guide/getting-started.md\")",
-      "Bash(pnpm build:docs)"
+      "Bash(pnpm build:docs)",
+      "Bash(npx vitest *)"
     ]
   }
 }
