@@ -15,7 +15,7 @@ afterEach(() => {
   vi.restoreAllMocks()
 })
 
-describe('BottomSheet', () => {
+describe('bottomSheet', () => {
   it('should render with default structure', () => {
     const wrapper = mount(BottomSheet)
     expect(wrapper.find('.bottom-sheet').exists()).toBe(true)
@@ -77,7 +77,7 @@ describe('BottomSheet', () => {
     const style = sheet.attributes('style')
     const match = style.match(/translateY\(([\d.]+)px\)/)
     expect(match).toBeTruthy()
-    const currentY = parseFloat(match![1])
+    const currentY = Number.parseFloat(match![1])
     expect(currentY).toBeLessThan(480)
   })
 
@@ -99,7 +99,7 @@ describe('BottomSheet', () => {
     const style = sheet.attributes('style')
     const match = style.match(/translateY\(([\d.]+)px\)/)
     expect(match).toBeTruthy()
-    const currentY = parseFloat(match![1])
+    const currentY = Number.parseFloat(match![1])
     expect(currentY).toBeGreaterThan(480)
   })
 
@@ -123,7 +123,7 @@ describe('BottomSheet', () => {
     const style = sheet.attributes('style')
     const match = style.match(/translateY\(([\d.]+)px\)/)
     expect(match).toBeTruthy()
-    expect(parseFloat(match![1])).toBeGreaterThanOrEqual(200)
+    expect(Number.parseFloat(match![1])).toBeGreaterThanOrEqual(200)
   })
 
   it('should emit load-more when list scrolls near bottom', async () => {
@@ -170,7 +170,7 @@ describe('BottomSheet', () => {
       touches: [{ clientY: 300 }],
     })
 
-    expect(wrapper2.emitted('load-more')).toBeTruthy()
+    expect(wrapper2.emitted('loadMore')).toBeTruthy()
   })
 
   it('should cancel previous inertia animation on new touchstart', async () => {

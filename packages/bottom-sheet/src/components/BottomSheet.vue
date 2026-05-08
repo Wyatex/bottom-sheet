@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 
 // ========== 1. 暴露给外部的 Props 和 Emits ==========
 const props = withDefaults(defineProps<{
@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<{
 })
 
 const emit = defineEmits<{
-  (e: 'load-more'): void
+  (e: 'loadMore'): void
 }>()
 
 // ========== 2. 内部状态与配置 ==========
@@ -173,9 +173,17 @@ function checkLoadMore() {
     return
   const { scrollTop, scrollHeight, clientHeight } = listRef.value
   if (scrollTop + clientHeight >= scrollHeight - 50) {
-    emit('load-more')
+    emit('loadMore')
   }
 }
+
+// 组件卸载时清理动画帧，避免在单测里面报错：requestAnimationFrame is not defined
+onUnmounted(() => {
+  if (rafId !== null) {
+    cancelAnimationFrame(rafId)
+    rafId = null
+  }
+})
 </script>
 
 <template>
