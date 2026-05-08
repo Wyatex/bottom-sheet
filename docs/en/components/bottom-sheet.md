@@ -70,15 +70,16 @@ import '@wyatex/bottom-sheet/dist/style.css'
 
 ```vue
 <script setup>
-import { ref } from 'vue'
 import { BottomSheet } from '@wyatex/bottom-sheet'
+import { ref } from 'vue'
 import '@wyatex/bottom-sheet/dist/style.css'
 
 const items = ref(Array.from({ length: 20 }, (_, i) => i + 1))
 const loading = ref(false)
 
 function loadMore() {
-  if (loading.value) return
+  if (loading.value)
+    return
   loading.value = true
   setTimeout(() => {
     const start = items.value.length
@@ -96,7 +97,9 @@ function loadMore() {
       <div v-for="id in items" :key="id" class="row">
         📍 Nearby Place {{ id }}
       </div>
-      <div v-if="loading" class="loading">Loading...</div>
+      <div v-if="loading" class="loading">
+        Loading...
+      </div>
     </BottomSheet>
   </div>
 </template>

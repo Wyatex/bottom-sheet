@@ -11,6 +11,7 @@ export default defineConfig({
         nav: [
           { text: '指南', link: '/guide/getting-started' },
           { text: '组件', link: '/components/bottom-sheet' },
+          { text: 'Playground', link: '/playground/' },
         ],
         sidebar: [
           {
@@ -24,6 +25,12 @@ export default defineConfig({
             text: '组件',
             items: [
               { text: 'BottomSheet', link: '/components/bottom-sheet' },
+            ],
+          },
+          {
+            text: '体验',
+            items: [
+              { text: 'Playground', link: '/playground/' },
             ],
           },
         ],
@@ -41,6 +48,7 @@ export default defineConfig({
         nav: [
           { text: 'Guide', link: '/en/guide/getting-started' },
           { text: 'Components', link: '/en/components/bottom-sheet' },
+          { text: 'Playground', link: '/en/playground/' },
         ],
         sidebar: [
           {
@@ -54,6 +62,12 @@ export default defineConfig({
             text: 'Components',
             items: [
               { text: 'BottomSheet', link: '/en/components/bottom-sheet' },
+            ],
+          },
+          {
+            text: 'Playground',
+            items: [
+              { text: 'Playground', link: '/en/playground/' },
             ],
           },
         ],

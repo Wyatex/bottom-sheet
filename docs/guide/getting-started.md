@@ -13,11 +13,13 @@ import '@wyatex/bottom-sheet/dist/style.css'
 <template>
   <div class="app">
     <!-- 页面背景内容 -->
-    <div class="map">...</div>
+    <div class="map">
+      ...
+    </div>
 
     <!-- 底部弹出面板 -->
     <BottomSheet>
-      <div class="item" v-for="n in 20" :key="n">
+      <div v-for="n in 20" :key="n" class="item">
         列表项 {{ n }}
       </div>
     </BottomSheet>
@@ -33,15 +35,16 @@ import '@wyatex/bottom-sheet/dist/style.css'
 
 ```vue
 <script setup>
-import { ref } from 'vue'
 import { BottomSheet } from '@wyatex/bottom-sheet'
+import { ref } from 'vue'
 import '@wyatex/bottom-sheet/dist/style.css'
 
 const items = ref([])
 const loading = ref(false)
 
 function loadMore() {
-  if (loading.value) return
+  if (loading.value)
+    return
   loading.value = true
 
   setTimeout(() => {
@@ -58,7 +61,9 @@ function loadMore() {
     <div v-for="item in items" :key="item.id" class="item">
       {{ item.text }}
     </div>
-    <div v-if="loading" class="loading">加载中...</div>
+    <div v-if="loading" class="loading">
+      加载中...
+    </div>
   </BottomSheet>
 </template>
 ```

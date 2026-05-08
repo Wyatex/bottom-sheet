@@ -13,11 +13,13 @@ import '@wyatex/bottom-sheet/dist/style.css'
 <template>
   <div class="app">
     <!-- Background content -->
-    <div class="map">...</div>
+    <div class="map">
+      ...
+    </div>
 
     <!-- Bottom sheet -->
     <BottomSheet>
-      <div class="item" v-for="n in 20" :key="n">
+      <div v-for="n in 20" :key="n" class="item">
         Item {{ n }}
       </div>
     </BottomSheet>
@@ -33,15 +35,16 @@ Listen to the `load-more` event to implement scroll-to-load:
 
 ```vue
 <script setup>
-import { ref } from 'vue'
 import { BottomSheet } from '@wyatex/bottom-sheet'
+import { ref } from 'vue'
 import '@wyatex/bottom-sheet/dist/style.css'
 
 const items = ref([])
 const loading = ref(false)
 
 function loadMore() {
-  if (loading.value) return
+  if (loading.value)
+    return
   loading.value = true
 
   setTimeout(() => {
@@ -58,7 +61,9 @@ function loadMore() {
     <div v-for="item in items" :key="item.id" class="item">
       {{ item.text }}
     </div>
-    <div v-if="loading" class="loading">Loading...</div>
+    <div v-if="loading" class="loading">
+      Loading...
+    </div>
   </BottomSheet>
 </template>
 ```
