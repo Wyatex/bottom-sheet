@@ -1,7 +1,7 @@
 {
   "name": "@wyatex/bottom-sheet",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A bottom sheet component for Vue 3",
   "license": "MIT",
   "repository": {
